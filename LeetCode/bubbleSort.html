@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+     var array = [3, -2,-1]; 
+        var done = false;
+        while (!done) 
+        {
+        done = true;
+            for (var i = 1; i < array.length; i += 1)
+            {
+                if (array[i - 1] > array[i]) 
+                {
+                done = false;
+                var tmp = array[i - 1];
+                array[i - 1] = array[i];
+                array[i] = tmp;
+                }
+            }  
+        }    
+    console.log(array);
+
+    var findMedianSortedArrays = function(nums1, nums2) {
+    
+    
+};
+   
+
+
+
+
+
+   
+    </script>
+  </body>
+</html>

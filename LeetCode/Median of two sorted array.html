@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+        /**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number}
+ */
+var findMedianSortedArrays = function(nums1, nums2) {
+        resultArr = nums1.concat(nums2);
+        
+    
+        var done = false;
+        while (!done) 
+        {
+        done = true;
+            for (var i = 1; i < resultArr.length; i += 1)
+            {
+                if (resultArr[i - 1] > resultArr[i]) 
+                {
+                done = false;
+                var tmp = resultArr[i - 1];
+                resultArr[i - 1] = resultArr[i];
+                resultArr[i] = tmp;
+                }
+            }  
+        }    
+        
+        arrLength = resultArr.length;
+        var ans; var x1; var x2;
+        if(arrLength % 2 != 0) {
+           ans = resultArr[Math.floor(arrLength / 2)];
+           return ans;
+        }
+        else {
+            len = arrLength / 2;
+            ans = resultArr[len] + resultArr [len - 1]; 
+            return ans / 2;
+        }
+};
+
+
+       console.log(findMedianSortedArrays(nums1,nums2));
+    </script>
+  </body>
+</html>
