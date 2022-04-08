@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      const nums = [2, 5, 5, 11];
+      var target = 10;
+      
+      function twoSum(nums, target) {
+        let mapData = new Map();
+
+        for (let i = 0; i < nums.length; i++) 
+        {
+          let varHold = target - nums[i];
+
+          if(mapData.has(varHold)) {
+            return [mapData.get(varHold), i];
+          }
+
+          mapData.set(nums[i],i);
+        }
+      };
+
+     console.log(twoSum(nums, target));
+    </script>
+  </body>
+</html>
